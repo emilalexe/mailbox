@@ -26,6 +26,25 @@ function getStyle($filename = "style"){
     }
 }
 
+function getBootstrap($version){
+	if(isset($version)){
+		getStyle("bootstrap-$version/css/bootstrap.min.css");
+		getScript("bootstrap-$version/js/bootstrap.min.js");
+	}
+	else {
+		$path = __DIR__ . '/assets/';
+		$latest = getLatestVersionFolder($path);
+
+		if ($latest) {
+			$msg = "Folderul cu cea mai recentă versiune este: " . $latest;
+			console($msg);
+		} else {
+			$msg = "Nu a fost găsit niciun folder care să respecte formatul.";			
+			console($msg);
+		}
+	}
+}
+
 function getScript($filename = "script"){
     if(file_exists('assets/script/' . $filename . '.js')){
         echo '<script type="text/javascript" src="assets/script/' . $filename . '.js"></script>';
@@ -53,5 +72,36 @@ function getLogo($url = false){
         getImage('logo','png','MailBox logo','assets/brand/');
     }
 }
+
+function getLatestVersionFolder($basePath, $prefix = 'bootstrap-') {
+    // 1. Scanăm directorul după toate fișierele/folderele
+    $folders = scandir($basePath);
+    
+    $latestVersion = '0.0.0';
+    $latestFolder = null;
+
+    foreach ($folders as $folder) {
+        // 2. Filtrăm doar folderele care încep cu prefixul dorit (ex: bootstrap-)
+        if (strpos($folder, $prefix) === 0) {
+            
+            // 3. Extragem versiunea din numele folderului
+            // Eliminăm prefixul și sufixul '-dist' pentru a rămâne doar cu numărul
+            $version = str_replace([$prefix, '-dist'], '', $folder);
+            
+            // 4. Comparăm versiunea curentă cu cea mai mare găsită până acum
+            if (version_compare($version, $latestVersion, '>')) {
+                $latestVersion = $version;
+                $latestFolder = $folder;
+            }
+        }
+    }
+
+    return $latestFolder;
+}
+
+function console($msg){
+	echo "<script>console.log('PHP Debug: " . $msg . "');</script>";
+}
+
 
 ?>
