@@ -28,8 +28,8 @@ function getStyle($filename = "style"){
 
 function getBootstrap($folderVersion = null){
 	if(isset($folderVersion)){
-		getStyle("$folderVersion/css/bootstrap.min.css");
-		getScript("$folderVersion/js/bootstrap.min.js");
+		getStyle("$folderVersion/css/bootstrap.min");
+		getScript("$folderVersion/js/bootstrap.min");
 	}
 	else {
 		$path = __DIR__ . '/assets/css/';
@@ -40,8 +40,8 @@ function getBootstrap($folderVersion = null){
 		if ($latest) {
 			$msg = "Folderul cu cea mai recentă versiune este: $version & $folderVersion";
 			console($msg);
-			getStyle("$folderVersion/css/bootstrap.min.css");
-			getScript("$folderVersion/js/bootstrap.min.js");
+			getStyle("$folderVersion/css/bootstrap.min");
+			getScript("$folderVersion/js/bootstrap.min");
 		} else {
 			$msg = "Nu a fost găsit niciun folder care să respecte formatul.";			
 			console($msg);
