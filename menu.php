@@ -1,13 +1,3 @@
-<nav class="btn-group" role="group">
-    <a class="navbar-brand logo" href="./" aria-label="MailBox"><?=getLogo() ?></a>
-    <li>
-        <a href="./">Home</a>
-    </li>
-    <li>
-        <a href="./about">About</a>
-    </li>
-</nav>
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand logo" href="./" aria-label="MailBox"><?=getLogo() ?></a>
