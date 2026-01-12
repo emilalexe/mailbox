@@ -41,7 +41,7 @@ function getBootstrap($folderVersion = null){
 			$msg = "Folderul cu cea mai recentă versiune este: $version & $folderVersion";
 			console($msg);
 			getStyle("$folderVersion/css/bootstrap.min");
-			getScript("$folderVersion/js/bootstrap.min");
+			getScript("$folderVersion/js/bootstrap.bundle.min");
 		} else {
 			$msg = "Nu a fost găsit niciun folder care să respecte formatul.";			
 			console($msg);
