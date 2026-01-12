@@ -26,7 +26,7 @@ function getStyle($filename = "style"){
     }
 }
 
-function getBootstrap($version){
+function getBootstrap($version = null){
 	if(isset($version)){
 		getStyle("bootstrap-$version/css/bootstrap.min.css");
 		getScript("bootstrap-$version/js/bootstrap.min.js");
