@@ -36,7 +36,7 @@ function getBootstrap($version = null){
 		$latest = getLatestVersionFolder($path);
 
 		if ($latest) {
-			$msg = "Folderul cu cea mai recentă versiune este: " . $latest;
+			$msg = "Folderul cu cea mai recentă versiune este: " . $latest['version'];
 			console($msg);
 		} else {
 			$msg = "Nu a fost găsit niciun folder care să respecte formatul.";			
@@ -97,7 +97,12 @@ function getLatestVersionFolder($basePath, $prefix = 'bootstrap-') {
         }
     }
 
-    return $latestFolder;
+    return [
+        'folder_name' => $latestFolder,
+        'version'     => $latestVersion,
+        'css_path'    => "assets/css/" . $latestFolder . "/css/bootstrap.min.css",
+        'js_path'     => "assets/js/" . $latestFolder . "/js/bootstrap.bundle.min.js"
+    ];
 }
 
 function console($msg){
