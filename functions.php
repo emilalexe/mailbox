@@ -32,7 +32,7 @@ function getBootstrap($version = null){
 		getScript("bootstrap-$version/js/bootstrap.min.js");
 	}
 	else {
-		$path = __DIR__ . '/assets/';
+		$path = __DIR__ . '/assets/css/';
 		$latest = getLatestVersionFolder($path);
 
 		if ($latest) {
