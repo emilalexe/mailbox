@@ -38,7 +38,7 @@ function getBootstrap($folderVersion = null){
 		$folderVersion = $latest['folder_name'];
 
 		if ($latest) {
-			$msg = "Folderul cu cea mai recentă versiune este: $version";
+			$msg = "Folderul cu cea mai recentă versiune este: $version & $folderVersion";
 			console($msg);
 			getStyle("$folderVersion/css/bootstrap.min.css");
 			getScript("$folderVersion/js/bootstrap.min.js");
