@@ -81,6 +81,7 @@ function getLatestVersionFolder($basePath, $prefix = 'bootstrap-') {
     $latestFolder = null;
 
     foreach ($folders as $folder) {
+		echo $folder . '<br>';
         // 2. Filtrăm doar folderele care încep cu prefixul dorit (ex: bootstrap-)
         if (strpos($folder, $prefix) === 0) {
             
