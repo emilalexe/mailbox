@@ -34,10 +34,13 @@ function getBootstrap($version = null){
 	else {
 		$path = __DIR__ . '/assets/css/';
 		$latest = getLatestVersionFolder($path);
+		$version = $latest['version'];
 
 		if ($latest) {
-			$msg = "Folderul cu cea mai recentă versiune este: " . $latest['version'];
+			$msg = "Folderul cu cea mai recentă versiune este: $version" . ;
 			console($msg);
+			getStyle("bootstrap-$version/css/bootstrap.min.css");
+			getScript("bootstrap-$version/js/bootstrap.min.js");
 		} else {
 			$msg = "Nu a fost găsit niciun folder care să respecte formatul.";			
 			console($msg);
