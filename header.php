@@ -11,6 +11,7 @@
         <meta name="description" content="Smart MailBox">
         <?=getStyle() ?>
         <?=getScript() ?>
+		<?=getBootstrap() ?>
     </head>
     <body>
         <header>
