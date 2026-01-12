@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/wvgrhpew/_subdomains/api/mailbox/
+    - /usr/bin/rsync -avz --exclude='.git' ./ $DEPLOYPATH
